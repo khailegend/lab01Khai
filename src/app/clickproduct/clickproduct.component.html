@@ -1,0 +1,21 @@
+<div class="card" *ngFor="let product of listProducts | filter:searchText">
+    <div class="card-header" >
+        <h3>{{product.productName}}</h3>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col">
+                {{product.productName}}<br>
+                {{product.code}}       <br>
+                {{product.available}}  <br>
+                {{product.price | currency}}
+            </div>
+            <div class="col">
+                <img *ngIf="visibleImage" [src]="product.imageURL" alt="" width="200px" height="200px">
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+
+    </div>
+</div>

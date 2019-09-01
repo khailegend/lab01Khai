@@ -1,0 +1,41 @@
+<h2 id="title">Products List Vew</h2>
+
+<div class="card border-primary mb-3 mt-3">
+    <div class="card-header bg-primary">Header</div>
+        <div class="card-body">
+            <form action="" class="form-inline">
+                <label for="filter" >Filter by:</label>
+                <input ng-model="searchText" type="text" class="form-control ml-5" name="filter" id="filter" [(ngModel)]="searchText">
+            </form>
+
+            <table class="table mt-5" id="searchTextResults">
+                <thead class="text-primary table-borderless">
+                    <th><button class="btn btn-primary" (click)="changeStatus()">{{visibleImage ? "Hide Image":"Show Image"}}</button></th>
+                    <th>Product</th>
+                    <th>Code</th>
+                    <th>Available</th>
+                    <th>Price</th>
+                    <th>5 Star Rating</th>
+                </thead>
+                <tbody>
+                    
+                    <tr *ngFor="let product of listProducts | filter:searchText">
+                        <td>
+                            <img *ngIf="visibleImage" [src]="product.imageURL" alt="" width="40px" height="40px">
+                        </td>
+                        <td>{{product.productName}}</td>
+                        <td>{{product.code}}</td>
+                        <td>{{product.available}}</td>
+                        <td>{{product.price | currency}}</td>
+                        <td>
+                            <div style="text-align:center">
+                                    <star-rating [value] = "product.starRating" checkedcolor="black" uncheckedcolor="grey" size="24px"></star-rating>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            
+        </div>
+  </div>
