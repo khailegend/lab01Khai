@@ -7,14 +7,16 @@ import { ProductComponent } from './product/product.component';
 import { FormsModule } from '@angular/forms';
 import {RatingModule} from 'ng-starrating';
 import { ClickproductComponent } from './clickproduct/clickproduct.component';
-import { CartComponent } from './cart/cart.component'
+import { CartComponent } from './cart/cart.component';
+import { ListstudentComponent } from './liststudent/liststudent.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductComponent,
     ClickproductComponent,
-    CartComponent
+    CartComponent,
+    ListstudentComponent
   ],
   imports: [
     BrowserModule,
