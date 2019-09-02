@@ -13,12 +13,16 @@ export class CartComponent implements OnInit {
     let total = this.listProducts.reduce((sum, product) => {
       return (sum + parseFloat(product.price) * this.qualities[product.id])
     }, 0)
-    debugger
+
     return total;
   }
   onClickIncrease(id) {
     if (this.qualities[id] < 50)
       ++this.qualities[id]
+  }
+  onClickDecrease(id){
+    if(this.qualities[id] > 0 )
+    --this.qualities[id]
   }
   visibleImage = true;
   changeStatus() {

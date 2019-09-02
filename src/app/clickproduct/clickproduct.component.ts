@@ -18,6 +18,7 @@ export class ClickproductComponent implements OnInit {
       id: 1,
       productName: "Leaf Rake",
       code: "GDN-0011",
+      description: "Leaf rake with 48-inch wooden handle",
       available: "Mar 19, 2016",
       price: "19.95",
       starRating: "0.61",
