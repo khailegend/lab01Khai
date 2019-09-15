@@ -1,10 +1,10 @@
-<div class="card" *ngFor="let product of listProducts | filter:searchText">
+<div class="card" >
     <div class="card-header" >
-        <h3>{{product.productName}}</h3>
+        
     </div>
     <div class="card-body">
         <div class="row">
-            <div class="col-2">
+            <div class="col-6">
                 <strong>Name: </strong><br>
                 <strong>Code: </strong><br>
                 <strong>Description: </strong><br>
@@ -12,7 +12,7 @@
                 <strong>Price: </strong><br>
                 <strong>5 Star Rating: </strong><br>
             </div>
-            <div class="col">
+            <div class="col-6">
                 {{product.productName}}<br>
                 {{product.code}}       <br>
                 {{product.description}}        <br>
@@ -21,7 +21,7 @@
                 {{product.starRating}}<br>
             </div>
             <div class="col">
-                <img *ngIf="visibleImage" [src]="product.imageURL" alt="" width="200px" height="200px">
+                <img  [src]="product.imageURL" alt="" width="200px" height="200px">
             </div>
         </div>
     </div>

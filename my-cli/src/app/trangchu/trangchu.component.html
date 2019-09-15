@@ -1,0 +1,20 @@
+
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>EnrollDate</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="myTable">
+          <tr *ngFor="let student of students">
+            <td>{{student.FirstMidName}}</td>
+            <td>{{student.LastName}}</td>
+            <td>{{student.EnrollmentDate}}</td>
+            <td><a routerLink="/detail/{{students[0].ID}}"><i class="fa fa-info-circle"></i></a> <i class="fa fa-trash" (click)="anhien($event)"></i> </td>
+          </tr>
+
+        </tbody>
+      </table>

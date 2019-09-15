@@ -1,6 +1,14 @@
 <div class="container">
-  <app-product></app-product>
-  <app-clickproduct></app-clickproduct><br>
-  <app-cart></app-cart><br>
+    <div class="btn-group">
+      <button class="btn btn-dark">
+        <a [routerLink]="['']">HOME</a>  
+      </button>
+      <button class="btn btn-success">
+        <a [routerLink]="['/product']">List products</a>
+      </button>
+      <button class="btn btn-dangers">
+          <a [routerLink]="['/liststudent']">BAITAP5</a>
+        </button>
+    </div>
 </div>
-<app-liststudent></app-liststudent>
+<router-outlet></router-outlet>

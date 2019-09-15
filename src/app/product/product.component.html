@@ -23,7 +23,12 @@
                         <td>
                             <img *ngIf="visibleImage" [src]="product.imageURL" alt="" width="40px" height="40px">
                         </td>
-                        <td>{{product.productName}}</td>
+                        <td>
+                            <a
+                             [routerLink]="['/product',product.id]">
+                            {{product.productName}}
+                            </a>
+                        </td>
                         <td>{{product.code}}</td>
                         <td>{{product.available}}</td>
                         <td>{{product.price | currency}}</td>

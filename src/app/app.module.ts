@@ -8,7 +8,9 @@ import { FormsModule } from '@angular/forms';
 import {RatingModule} from 'ng-starrating';
 import { ClickproductComponent } from './clickproduct/clickproduct.component';
 import { CartComponent } from './cart/cart.component';
-import { ListstudentComponent } from './liststudent/liststudent.component'
+import { ListstudentComponent } from './liststudent/liststudent.component';
+import {RouterModule} from '@angular/router';
+import { Lab2Component } from './lab2/lab2.component'
 
 @NgModule({
   declarations: [
@@ -16,14 +18,23 @@ import { ListstudentComponent } from './liststudent/liststudent.component'
     ProductComponent,
     ClickproductComponent,
     CartComponent,
-    ListstudentComponent
+    ListstudentComponent,
+    Lab2Component
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     Ng2SearchPipeModule,
     FormsModule,
-    RatingModule
+    RatingModule ,
+    BrowserModule, 	
+	  RouterModule.forRoot([ 
+	  { path: '', 	component: ProductComponent }, 
+	{path: 'product', component:ProductComponent},
+  { path: 'product/:productid', component: ClickproductComponent },
+  { path: 'liststudent', component: ListstudentComponent },
+	{ path: '**', redirectTo: 'product', pathMatch: 'full' },
+  ]) 
   ],
   providers: [],
   bootstrap: [AppComponent]
