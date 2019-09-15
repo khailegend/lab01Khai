@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,7 +10,8 @@ import { ClickproductComponent } from './clickproduct/clickproduct.component';
 import { CartComponent } from './cart/cart.component';
 import { ListstudentComponent } from './liststudent/liststudent.component';
 import {RouterModule} from '@angular/router';
-import { Lab2Component } from './lab2/lab2.component'
+import { Lab2Component } from './lab2/lab2.component';
+import { Lab2DetailComponent } from './lab2-detail/lab2-detail.component'
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { Lab2Component } from './lab2/lab2.component'
     ClickproductComponent,
     CartComponent,
     ListstudentComponent,
-    Lab2Component
+    Lab2Component,
+    Lab2DetailComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +35,8 @@ import { Lab2Component } from './lab2/lab2.component'
 	{path: 'product', component:ProductComponent},
   { path: 'product/:productid', component: ClickproductComponent },
   { path: 'liststudent', component: ListstudentComponent },
-	{ path: '**', redirectTo: 'product', pathMatch: 'full' },
+  { path: 'lab2', component: Lab2Component},
+  { path: 'lab2/detail/:id', component: Lab2DetailComponent}
   ]) 
   ],
   providers: [],
