@@ -1,0 +1,33 @@
+<div class="card">
+    <div class="card-header">
+        <h1>DANH SÁCH HÀNG HÓA</h1>
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <thead>
+                <th>Name</th>
+                <th>price</th>
+                <th>Discount</th>
+                <th>Date</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let lis of list | paginate: { itemsPerPage: itempage , currentPage: currpage }">
+                    <td>{{lis.name}}</td>
+                    <td>{{lis.price}}</td>
+                    <td>{{lis.discount}}</td>
+                    <td>{{lis.date}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="card-footer">
+        khai
+        <ul class="pagination">
+            <li><a href="#">1</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,118 @@
+<h1>Bài 1-1</h1>
+<form class="col-6">
+    <div class="form-group">
+        <label>Chiều dài</label>
+        <input type="number" [(ngModel)]="cd" [ngModelOptions]="{standalone:true}" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Chiều rộng</label>
+        <input type="number" [(ngModel)]="cr" [ngModelOptions]="{standalone:true}" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Chu vi</label>
+        <input type="number" [(ngModel)]="cv" [ngModelOptions]="{standalone:true}" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Diện tích</label>
+        <input type="number" [(ngModel)]="dt" [ngModelOptions]="{standalone:true}" class="form-control">
+    </div>
+    <button type="number" class="btn btn-primary" (click)="tinh();">tính</button>
+</form>
+<br><br>
+
+<h1> Bài 1-2 </h1>
+
+<form class="col-6">
+    <div class="form-group">
+        <label>Họ và tên</label>
+        <input type="text" [(ngModel)]="student.hoten" [ngModelOptions]="{standalone:true}" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Ngày sinh</label>
+        <input type="date" [(ngModel)]="student.ngaysinh" [ngModelOptions]="{standalone:true}" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Giới tính</label>
+        <select class="custom-select" [(ngModel)]="student.gioitinh" [ngModelOptions]="{standalone:true}">
+            <option value="nam">Nam</option>
+            <option value="nu">Nữ</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Điểm</label>
+        <input type="number" [(ngModel)]="student.diem" [ngModelOptions]="{standalone:true}" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Học lực</label>
+        <input type="text" [(ngModel)]="student.hocluc" [ngModelOptions]="{standalone:true}" class="form-control">
+    </div>
+    <button type="number" class="btn btn-primary" (click)="tinhdiem();">tính điểm</button>
+</form>
+<br><br>
+<h1> BÀI 2 </h1>
+<h3>Tính Lương Tết Nguyên Đán</h3>
+<form class="col-6">
+    <div class="form-group">
+        <label>Họ và tên</label>
+        <input type="text" [(ngModel)]="nhanvien.hotennv" [ngModelOptions]="{standalone:true}" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Lương</label>
+        <input type="text" [(ngModel)]="nhanvien.luong" [ngModelOptions]="{standalone:true}" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Giới tính</label><br>
+        <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" class="custom-control-input" [(ngModel)]="nhanvien.gioitinhnv"
+                [ngModelOptions]="{standalone:true}" id="customRadio" name="example" value="nam">
+            <label class="custom-control-label" for="customRadio">Nam</label>
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" class="custom-control-input" [(ngModel)]="nhanvien.gioitinhnv"
+                [ngModelOptions]="{standalone:true}" id="customRadio2" name="example" value="nu">
+            <label class="custom-control-label" for="customRadio2">Nữ</label>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Độ tuổi</label>
+        <select class="custom-select" [(ngModel)]="nhanvien.dotuoi" [ngModelOptions]="{standalone:true}">
+            <option *ngFor="let t of list" value="{{t.rate}}">{{t.age}}</option>
+
+        </select>
+    </div>
+    <div class="form-group">
+        <div class="alert alert-success">
+            <label>Thưởng</label>
+            {{tinhthuong()}} <strong> VNĐ</strong>
+        </div>
+    </div>
+
+</form>
+<br><br>
+<h1>Bài 3</h1>
+<div class=" col-9">
+    <div class="card-header">
+        <strong>BÁN HÀNG GIẢI KHÁT</strong>
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <thead>
+                <th>TÊN HÀNG</th>
+                <th>SỐ LƯỢNG</th>
+                <th>ĐƠN GIÁ</th>
+                <th>THÀNH TIỀN</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let d of listdrinks | filter:searchText">    
+                    <td class="custom-control custom-radio custom-control-inline">
+                        <input type="checkbox" class="custom-control-input disable" [(ngModel)]="nuocngot.id" [ngModelOptions]="{standalone:true}"  id={{d.id}}  value="{{d.id}}">
+                        <label class="custom-control-label" for={{d.id}} >{{d.namedrink}}</label>
+                    </td>
+                    <td><input type="number" [(ngModel)]="nuocngot.amount" [ngModelOptions]="{standalone:true}"></td>
+                    <td><input [(ngModel)]="nuocngot.dongia" [ngModelOptions]="{standalone:true}" value="{{d.price}}">{{d.price}}</td>
+                    <td>{{totalmoney()}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
