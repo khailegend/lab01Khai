@@ -40,34 +40,83 @@ export class Lap05Component implements OnInit {
     }
   ];
 
-  nuocngot = {
-    amount:0,
-    dongia:null,
-  };
-  searchText;
-  listdrinks = [
+  
+
+  products = [
     {
       id: 1,
-      namedrink : "Nước ngọt",
+      name: "Nước Ngọt",
       price: 10000
     },
     {
       id: 2,
-      namedrink : "Cà phê đen",
-      price: 12000
+      name: "Coffee Đen",
+      price: 20000
     },
     {
       id: 3,
-      namedrink : "Thuốc lá",
-      price: 18000
+      name: "Coca Cola",
+      price: 12000
+    },
+    {
+      id: 4,
+      name: "Nước tăng lực",
+      price: 13000
     }
-  ];
+  ]
   constructor() { }
+  qualities ={}
  
+  isSalary
+  name
+  salary
+  gender
+  groupAge
+
+  onChangeName() {
+    this.name = this.name.trim()
+  }
+
+  onChangeGender(gender) {
+    this.gender = gender
+  }
+
+  onChangeSalary() {
+    if (parseInt(this.salary).toString() !== this.salary.toString()) {
+      this.isSalary = false
+      this.salary = ""
+  }
+    else {
+      this.isSalary = true
+      if (this.salary)
+        this.salary = parseInt(this.salary)
+      else
+        this.salary = ""
+    }
+  }
   
 
   ngOnInit() {
-   
+    this.products.map(product => {
+      this.checked[product.id] = false
+      this.quantity[product.id] = 0
+    });
+    this.salary = "" ;
+  }
+  checked = {}
+
+  quantity = {}
+  total =0;
+  onChange(id) {
+    console.log(parseInt(this.quantity[id]))
+    if (!parseInt(this.quantity[id]))
+      this.quantity[id] = 0
+    else
+      this.quantity[id] = parseInt(this.quantity[id])
+
+    this.total = this.products.reduce((a, b) => {
+      return a + b.price * this.quantity[b.id]
+    }, 0)
   }
   
   tinh(){
@@ -88,9 +137,6 @@ export class Lap05Component implements OnInit {
     return s;
   };
 
-  totalmoney (){
-    let s = this.nuocngot.dongia ;
-    return s ;
-  }
+  
   
 }
