@@ -17,6 +17,11 @@ import { Lap04Component } from './lap04/lap04.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { Lap05Component } from './lap05/lap05.component'; 
 import {FormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { FilmComponent } from './lap06/film/film.component';
+import { DetailfilmComponent } from './lap06/detailfilm/detailfilm.component';
+import { DetailfilmService } from './lap06/detailfilm.service';
+
 
 @NgModule({
   declarations: [
@@ -31,6 +36,10 @@ import {FormsModule} from '@angular/forms';
     Lap3ListproductComponent,
     Lap04Component,
     Lap05Component,
+
+    FilmComponent,
+    DetailfilmComponent,
+    
    
   ],
   imports: [
@@ -40,6 +49,7 @@ import {FormsModule} from '@angular/forms';
     FormsModule,
     RatingModule ,
     NgxPaginationModule,
+    HttpClientModule,
     BrowserModule, 	
 	  RouterModule.forRoot([ 
 	  { path: 'khai', 	component: ProductComponent }, 
@@ -51,9 +61,12 @@ import {FormsModule} from '@angular/forms';
   { path: 'lab3', component: Lab3Component},
   { path: 'lab3-listproduct', component: Lap3ListproductComponent},
   { path: 'lab05', component:Lap05Component},
+  { path: 'lab06', component:FilmComponent},
   ]) 
   ],
-  providers: [],
+  providers: [
+    DetailfilmService
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
