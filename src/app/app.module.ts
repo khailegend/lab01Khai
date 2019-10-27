@@ -21,6 +21,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { FilmComponent } from './lap06/film/film.component';
 import { DetailfilmComponent } from './lap06/detailfilm/detailfilm.component';
 import { DetailfilmService } from './lap06/detailfilm.service';
+import { Lab07Component } from './lab07/lab07.component';
+//import { NgForm } from '@angular/forms';
+import { Lab08Component } from './lab08/lab08.component';
+import { DetailComponent } from './lab08/detail/detail.component';
+import { HomeComponent } from './lab08/home/home.component';
+
+
+
+
+
 
 
 @NgModule({
@@ -39,10 +49,16 @@ import { DetailfilmService } from './lap06/detailfilm.service';
 
     FilmComponent,
     DetailfilmComponent,
+    Lab07Component,
+    Lab08Component,
+    DetailComponent,
+    HomeComponent,
+      
     
    
   ],
   imports: [
+    
     BrowserModule,
     AppRoutingModule,
     Ng2SearchPipeModule,
@@ -62,6 +78,13 @@ import { DetailfilmService } from './lap06/detailfilm.service';
   { path: 'lab3-listproduct', component: Lap3ListproductComponent},
   { path: 'lab05', component:Lap05Component},
   { path: 'lab06', component:FilmComponent},
+  { path: 'lab07', component:Lab07Component},
+
+  { path: 'detail/:id', component:DetailComponent},
+  { path: '', component:HomeComponent},
+ 
+  { path: 'lab06/detailfilm/:url', component: DetailfilmComponent},
+  //{ path: 'detail:id', component: DetailComponent},
   ]) 
   ],
   providers: [

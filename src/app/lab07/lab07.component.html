@@ -1,0 +1,55 @@
+<div class="container col-8 offset-4">
+    <h1>THÊM SINH VIÊN</h1>
+    <form #formAdd="ngForm" (ngSubmit)="addStudent(formAdd.value)" class="form-group">
+        <div class="col-6">
+            <label><strong>Full name</strong></label>
+            <input type="text" id="defaultRegisterFormName" #fullName="ngModel" name="fullName" ngModel class="form-control"
+                placeholder="full name">
+        </div>
+        <div class="col-6">
+            <label><strong>Date Of Birth</strong></label>
+            <input type="date" id="defaultRegisterFormDate" #birthday="ngModel" name="birthday" ngModel class="form-control">
+        </div>
+        <div class="col-6">
+            <label><strong>Point</strong></label>
+            <input type="number" id="defaultRegisterFormPoint" #mark="ngModel" name="mark" ngModel class="form-control"
+                placeholder="0">
+        </div>
+        <br>
+        <div  class="form-inline" style="margin: 0px 0px 0px 120px ;">
+            <button class="btn btn-primary" type="submit" (click)="onAdd()">Add Student</button>
+            <button class="btn btn-danger" (click)="deleteForm();">Delete</button>
+        </div>
+
+    </form>
+    <table class="table" id="searchTextResults" style="margin: 0px 0px 0px -220px;">
+            <thead class="text-primary table-borderless">
+                
+                <th>Full name</th>
+                <th>Date of birth</th>
+                <th>Point</th>
+                <th>Classification</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let student of students" >
+                    <td>{{student.fullName}}</td>
+                    <td>{{student.birthday|date:'dd-MM-yyy'}}</td>
+                    <td>{{student.mark}}</td>
+                    <td>{{gradeStudent(student)}}</td>
+                    <td></td>
+                    <td class="form-inline">
+                        <button class="btn btn-primary" 
+                            #datacapnhat
+                            data-toggle="modal" data-target="#md" 
+                            [attr.data-fullName]="student.fullName"
+                            [attr.data-fullName]="student.birthday"
+                            [attr.data-fullName]="student.mark"
+                            (click)="capnhat(datacapnhat)"
+                        >edit</button>
+                        <button class="btn btn-danger" >delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+</div>

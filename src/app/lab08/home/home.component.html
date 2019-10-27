@@ -1,0 +1,9 @@
+<h1 class="text-warning">PRETURED PRODUCTS</h1>
+<div *ngFor ="let gt of guitar" class="row">
+    <img class="col-3" src="{{gt.image}}" width="100px" height="120">
+    <div class="col-9">
+        <a routerLink="/detail/{{gt.id}}"><strong>{{gt.productname}}</strong></a><br>
+        <strong>Price:</strong>${{gt.price}} <br>
+        {{gt.description}}
+    </div>
+</div><br>

@@ -1,0 +1,59 @@
+<br>
+<div class="row">
+    <div class="col-2">
+        <div id="accordion">
+            <div class="card">
+                <div class="card-header bg-warning">
+                    <a class="card-link" data-toggle="collapse" href="#collapseOne">
+                        <strong class="text-dark">Links</strong>
+                    </a>
+                </div>
+                <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                    <div class="card-body" >
+                       <a href="#" >View card</a><br>
+                       <a href="#">Login/Register</a><br>
+                       <a routerLink =''>Home</a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="card">
+                <div class="card-header bg-warning">
+                    <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+                        <strong class="text-dark">Categories</strong>
+                    </a>
+                </div>
+                <div id="collapseTwo"  data-parent="#accordion">
+                    <div class="card-body">
+                       <a href="#">Guitars</a><br>
+                       <a href="#">Pianos</a><br>
+                       <a href="#">Drums</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header bg-warning">
+                    <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+                       <strong class="text-dark"> Temp link</strong>
+                    </a>
+                </div>
+                <div id="collapseThree"  data-parent="#accordion">
+                    <div class="card-body">
+                        <a href="#" >Admin</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-8">
+        We have a great selection of musical instruments including guitars , basses , and drums . And we're constantly adding more to give you the best selection possiblel
+        
+      
+        <router-outlet></router-outlet>
+        
+    </div>
+    
+    
+</div>
+<br>

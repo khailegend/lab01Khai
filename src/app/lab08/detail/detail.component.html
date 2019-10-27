@@ -1,0 +1,14 @@
+<div *ngIf ="guitar" >
+<h2 class="text-warning">{{guitar.productname}}</h2>
+<div class="row">
+    <img class="col-3" src="{{guitar.image}}" width="200px" height="400px">
+    <div class="col-8">
+        <strong>Price: </strong>${{guitar.price}}<br>
+        
+        <strong>Qualities: </strong><input type="number" style="width:50px;" >
+        <button class="btn btn-primary"> Add to cart </button> <br><br>
+        <strong class="text-warning">Description</strong><br>
+        {{guitar.description}}
+    </div>
+</div>
+</div>
